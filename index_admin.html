@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual de Administrador -ParkNow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- ===== SIDEBAR ===== -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <div class="brand">
+      <div class="brand-icon">P</div>
+      <div class="brand-text">
+        <div class="brand-name">ParkNow</div>
+        <div class="brand-sub">Manual de Administrador</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-menu">
+    <div class="menu-section-label">Contenido</div>
+    <a class="nav-item active" onclick="show('s1',this)">
+      <span class="nav-icon">01</span><span>Introducción</span>
+    </a>
+    <a class="nav-item" onclick="show('s2',this)">
+      <span class="nav-icon">02</span><span>Requisitos del Sistema</span>
+    </a>
+    <a class="nav-item" onclick="show('s3',this)">
+      <span class="nav-icon">03</span><span>Acceso al Sistema</span>
+    </a>
+    <a class="nav-item" onclick="show('s4',this)">
+      <span class="nav-icon">04</span><span>Dashboard Principal</span>
+    </a>
+    <a class="nav-item" onclick="show('s5',this)">
+      <span class="nav-icon">05</span><span>Gestión de Parqueaderos</span>
+    </a>
+    <a class="nav-item" onclick="show('s6',this)">
+      <span class="nav-icon">06</span><span>Gestión de Espacios</span>
+    </a>
+    <a class="nav-item" onclick="show('s7',this)">
+      <span class="nav-icon">07</span><span>Reservas</span>
+    </a>
+    <a class="nav-item" onclick="show('s8',this)">
+      <span class="nav-icon">08</span><span>Usuarios y Roles</span>
+    </a>
+    <a class="nav-item" onclick="show('s9',this)">
+      <span class="nav-icon">09</span><span>Reportes y Analíticas</span>
+    </a>
+    <a class="nav-item" onclick="show('s10',this)">
+      <span class="nav-icon">10</span><span>Tarifas</span>
+    </a>
+    <a class="nav-item" onclick="show('s11',this)">
+      <span class="nav-icon">11</span><span>Notificaciones</span>
+    </a>
+    <a class="nav-item" onclick="show('s12',this)">
+      <span class="nav-icon">12</span><span>Configuración</span>
+    </a>
+    <a class="nav-item" onclick="show('s13',this)">
+      <span class="nav-icon">13</span><span>Resolución de Problemas</span>
+    </a>
+    <a class="nav-item" onclick="show('s14',this)">
+      <span class="nav-icon">14</span><span>Consejos de Seguridad</span>
+    </a>
+    <a class="nav-item" onclick="show('s15',this)">
+      <span class="nav-icon">15</span><span>Términos y Condiciones</span>
+    </a>
+    <a class="nav-item" onclick="show('s16',this)">
+      <span class="nav-icon">16</span><span>Soporte Técnico</span>
+    </a>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="version-badge">v1.0 · 2025 · Admin</div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+
+<!-- =========================================================
+     S1: INTRODUCCIÓN
+     ========================================================= -->
+<div id="s1" class="section active">
+  <div class="section-hero">
+    <div class="section-tag">Sección 01</div>
+    <h1>Manual de <span class="accent">Administrador</span><br>ParkNow</h1>
+    <p class="lead">Guía completa para administradores del sistema: gestión de parqueaderos, espacios, reservas, usuarios, tarifas, reportes y configuración de la plataforma.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>¿Qué es el Panel de Administración ParkNow?</h2>
+  <p>El panel de administración de ParkNow es la interfaz centralizada desde la cual los administradores pueden gestionar todos los aspectos operativos del sistema de parqueaderos. Permite supervisar en tiempo real la disponibilidad de espacios, las reservas activas, los usuarios registrados y el desempeño financiero de cada parqueadero.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <div class="card-title">Gestionar</div>
+      <p>Administra parqueaderos, espacios, tarifas y configuraciones desde un solo panel.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">👥</div>
+      <div class="card-title">Controlar</div>
+      <p>Gestiona usuarios, roles y permisos del sistema con control granular.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Analizar</div>
+      <p>Accede a reportes financieros, mapas de calor y métricas de uso en tiempo real.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔔</div>
+      <div class="card-title">Notificar</div>
+      <p>Envía y gestiona notificaciones a usuarios del sistema.</p>
+    </div>
+  </div>
+
+  <h2>Propósito del Manual</h2>
+  <p>Este manual está diseñado para guiar a los administradores del sistema ParkNow en el uso completo del panel de administración, cubriendo desde el acceso inicial hasta la gestión avanzada de reportes y configuraciones del sistema.</p>
+
+  <h2>Audiencia Objetivo</h2>
+  <div class="info-list">
+    <div class="info-item">
+      <div class="info-dot purple"></div>
+      <div><strong>Administradores Principales:</strong> Personal con acceso total al sistema para gestionar todos los módulos disponibles.</div>
+    </div>
+    <div class="info-item">
+      <div class="info-dot blue"></div>
+      <div><strong>Operadores de Parqueadero:</strong> Personal encargado de la gestión diaria de espacios y reservas de uno o varios parqueaderos.</div>
+    </div>
+    <div class="info-item">
+      <div class="info-dot green"></div>
+      <div><strong>Supervisores Financieros:</strong> Personal que accede a los módulos de reportes y análisis financiero.</div>
+    </div>
+  </div>
+
+  <h2>Beneficios del Panel Administrativo</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <span class="benefit-icon">⚡</span>
+      <div><strong>Gestión centralizada</strong><p>Administra múltiples parqueaderos desde una sola interfaz unificada.</p></div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">📈</span>
+      <div><strong>Reportes en tiempo real</strong><p>Visualiza métricas de ocupación, ingresos y demanda al instante.</p></div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">🔐</span>
+      <div><strong>Control de accesos</strong><p>Define roles y permisos específicos para cada miembro del equipo.</p></div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-icon">🗺️</span>
+      <div><strong>Mapa de calor</strong><p>Visualiza zonas de alta demanda para optimizar la distribución de espacios.</p></div>
+    </div>
+  </div>
+
+  <h2>Estructura del Manual</h2>
+  <div class="toc-list">
+    <div class="toc-item"><span class="toc-num">01</span><span>Introducción -Visión general del panel administrativo</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span>Requisitos del Sistema -Dispositivos y conexión recomendada</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span>Acceso al Sistema -Login y primer inicio de sesión</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span>Dashboard Principal -Métricas y resumen ejecutivo</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span>Gestión de Parqueaderos -Crear, editar y administrar parqueaderos</span></div>
+    <div class="toc-item"><span class="toc-num">06</span><span>Gestión de Espacios -Administrar disponibilidad de espacios</span></div>
+    <div class="toc-item"><span class="toc-num">07</span><span>Reservas -Ver, crear y gestionar reservas del sistema</span></div>
+    <div class="toc-item"><span class="toc-num">08</span><span>Usuarios y Roles -Gestión de cuentas y permisos</span></div>
+    <div class="toc-item"><span class="toc-num">09</span><span>Reportes y Analíticas -Financieros, reportes y mapa de calor</span></div>
+    <div class="toc-item"><span class="toc-num">10</span><span>Tarifas -Configuración de precios y tarifas especiales</span></div>
+    <div class="toc-item"><span class="toc-num">11</span><span>Notificaciones -Envío y gestión de alertas</span></div>
+    <div class="toc-item"><span class="toc-num">12</span><span>Configuración -Parámetros generales del sistema</span></div>
+    <div class="toc-item"><span class="toc-num">13</span><span>Resolución de Problemas -Errores frecuentes y soluciones</span></div>
+    <div class="toc-item"><span class="toc-num">14</span><span>Consejos de Seguridad -Protección de datos y accesos</span></div>
+    <div class="toc-item"><span class="toc-num">15</span><span>Términos y Condiciones -Condiciones de uso administrativo</span></div>
+    <div class="toc-item"><span class="toc-num">16</span><span>Soporte Técnico -Canales de contacto y ayuda</span></div>
+  </div>
+
+  <div class="alert alert-info">
+    <strong>Compromiso del Administrador:</strong> El acceso al panel de administración implica responsabilidad sobre los datos de los usuarios y la operación del sistema. El administrador se compromete a usar las herramientas de forma ética, mantener la confidencialidad de las credenciales y no compartir accesos con personal no autorizado.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 01 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S2: REQUISITOS
+     ========================================================= -->
+<div id="s2" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 02</div>
+    <h1>Requisitos del <span class="accent">Sistema</span></h1>
+    <p class="lead">El panel de administración de ParkNow está disponible como aplicación móvil. Verifica que tu dispositivo cumpla los requisitos para una gestión óptima.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>Dispositivos Compatibles</h2>
+  <div class="req-grid">
+    <div class="req-card">
+      <div class="req-header">
+        <span class="req-os-icon">🤖</span><h3>Android</h3>
+      </div>
+      <table><tbody>
+        <tr><td><strong>Versión mínima</strong></td><td>Android 9.0 (Pie) o superior</td></tr>
+        <tr><td><strong>RAM</strong></td><td>Mínimo 3 GB recomendado</td></tr>
+        <tr><td><strong>Almacenamiento</strong></td><td>150 MB libres</td></tr>
+        <tr><td><strong>Procesador</strong></td><td>ARM64 (recomendado para dashboards)</td></tr>
+        <tr><td><strong>Resolución</strong></td><td>Mínimo 1920 × 1080 px</td></tr>
+        <tr><td><strong>GPS</strong></td><td>Requerido</td></tr>
+      </tbody></table>
+    </div>
+    
+  </div>
+
+  <h2>Conectividad</h2>
+  <div class="conn-list">
+    <div class="conn-item">
+      <div class="conn-icon">📶</div>
+      <div>
+        <strong>Conexión recomendada</strong>
+        <p>Se requiere mínimo <strong>5 Mbps</strong> para la carga de dashboards, reportes con gráficas y mapa de calor en tiempo real.</p>
+      </div>
+    </div>
+    <div class="conn-item">
+      <div class="conn-icon">📡</div>
+      <div>
+        <strong>Redes compatibles</strong>
+        <p>Compatible con <strong>4G, 5G y Wi-Fi</strong>Se recomienda Wi-Fi empresarial para sesiones prolongadas de administración.</p>
+      </div>
+    </div>
+    <div class="conn-item">
+      <div class="conn-icon">📴</div>
+      <div>
+        <strong>Sin conexión</strong>
+        <p>El panel administrativo <strong>requiere conexión activa</strong> para todas sus operaciones. No hay modo offline disponible para el administrador.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Recomendaciones Adicionales</h2>
+  <div class="alert alert-tip">
+    <ul style="margin:0;padding-left:1.2rem;line-height:2.1">
+      <li>Usa un dispositivo con <strong>pantalla de al menos 6 pulgadas</strong> para mejor visualización de tablas y dashboards.</li>
+      <li>Mantén la aplicación <strong>siempre actualizada</strong> a la última versión disponible.</li>
+      <li>Habilita la <strong>autenticación de dos factores</strong> para cuentas de administrador.</li>
+      <li>Usa una <strong>conexión segura (VPN)</strong> cuando administres el sistema desde redes públicas.</li>
+      <li>Configura el bloqueo automático de pantalla en menos de <strong>2 minutos</strong> en dispositivos administrativos.</li>
+    </ul>
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 02 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S3: ACCESO AL SISTEMA
+     ========================================================= -->
+<div id="s3" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 03</div>
+    <h1>Acceso al <span class="accent">Sistema</span></h1>
+    <p class="lead">Cómo iniciar sesión en el panel administrativo y configurar el acceso por primera vez.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>Pantalla de Primer Inicio</h2>
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>Al abrir ParkNow como administrador por primera vez, verás la pantalla de bienvenida general. Desde aquí accedes al flujo de inicio de sesión administrativo.</p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="fi-icon">🚀</span>
+          <div><strong>Pantalla de bienvenida</strong><p>Muestra el logo de ParkNow y el botón para comenzar a usar la plataforma.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon">🔑</span>
+          <div><strong>Acceso al login</strong><p>Toca <strong>"Comenzar"</strong> para acceder a la pantalla de inicio de sesión administrativo.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/primer inicio.png" alt="Primer Inicio" class="screen-img" />
+        <p class="screen-caption">Pantalla de Primer Inicio</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Inicio de Sesión Administrativo</h2>
+  <div class="feature-layout">
+    <div class="feature-text">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body"><strong>Abrir la app ParkNow</strong><p>Desde la pantalla de inicio toca <strong>"Ingresar"</strong></p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body"><strong>Ingresar credenciales</strong><p>Escribe el <strong>correo electrónico y contraseña</strong> de tu cuenta de administrador proporcionada por el equipo técnico.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body"><strong>Iniciar sesión</strong><p>Toca el botón <strong>"Iniciar Sesión"</strong> También puedes usar <strong>"Iniciar Sesión con Google"</strong> si tu cuenta está vinculada.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body"><strong>Acceso al panel</strong><p>Si las credenciales son correctas, el sistema te redirigirá automáticamente al panel de bienvenida administrativo.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/login.png" alt="Login Administrador" class="screen-img" />
+        <p class="screen-caption">Inicio de Sesión</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Panel de Bienvenida Administrativo</h2>
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>Tras iniciar sesión exitosamente, el administrador accede a la pantalla de bienvenida que muestra las opciones principales del sistema:</p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="fi-icon">🏢</span>
+          <div><strong>Encuentra espacio fácilmente</strong><p>Acceso rápido al mapa y disponibilidad de parqueaderos.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon">📅</span>
+          <div><strong>Reservas en real</strong><p>Visualización de reservas activas en tiempo real.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon">🔒</span>
+          <div><strong>Pago digital seguro</strong><p>Resumen del módulo de pagos y transacciones.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/bienvenido.png" alt="Bienvenida Admin" class="screen-img" />
+        <p class="screen-caption">Bienvenida Administrativa</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warning">
+    <strong>⚠ Credenciales de administrador:</strong> Las cuentas de administrador son asignadas por el equipo técnico de ParkNow. No uses credenciales de usuarios regulares para acceder al panel. Si necesitas una cuenta de administrador, contacta a <strong>admin@parknow.com</strong>.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 03 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S4: DASHBOARD
+     ========================================================= -->
+<div id="s4" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 04</div>
+    <h1>Dashboard <span class="accent">Principal</span></h1>
+    <p class="lead">Vista ejecutiva del sistema con métricas clave, accesos rápidos y resumen del estado operativo en tiempo real.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>El dashboard es la pantalla principal del panel administrativo. Ofrece una visión consolidada de los indicadores más importantes del sistema.</p>
+
+      <h3>Métricas Principales</h3>
+      <table>
+        <thead><tr><th>Indicador</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Parqueadero</strong></td><td>Nombre del parqueadero activo seleccionado</td></tr>
+          <tr><td><strong>Espacios totales</strong></td><td>Número total de espacios del parqueadero</td></tr>
+          <tr><td><strong>Disponibles</strong></td><td>Espacios libres en tiempo real</td></tr>
+          <tr><td><strong>Ocupados</strong></td><td>Espacios con reservas activas en este momento</td></tr>
+          <tr><td><strong>Reservaciones / Reportes</strong></td><td>Acceso rápido a módulos de gestión</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:1.5rem">Acciones Rápidas</h3>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="fi-icon">📋</span>
+          <div><strong>Reservaciones</strong><p>Accede directamente al listado de reservas activas y pendientes.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon">📝</span>
+          <div><strong>Reportes</strong><p>Navega a los reportes operativos y financieros del sistema.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/dashboard.png" alt="Dashboard Principal" class="screen-img" />
+        <p class="screen-caption">Dashboard Principal</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Menú de Navegación Lateral</h2>
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>El menú lateral permite navegar a todos los módulos del panel administrativo. Se accede deslizando desde el borde izquierdo o tocando el ícono ☰.</p>
+      <table>
+        <thead><tr><th>Módulo</th><th>Función</th></tr></thead>
+        <tbody>
+          <tr><td>🏠 <strong>Dashboard</strong></td><td>Vista general y métricas</td></tr>
+          <tr><td>🅿️ <strong>Parqueaderos</strong></td><td>Gestión de parqueaderos</td></tr>
+          <tr><td>📅 <strong>Reservas</strong></td><td>Administración de reservas</td></tr>
+          <tr><td>👥 <strong>Usuarios</strong></td><td>Gestión de cuentas</td></tr>
+          <tr><td>📊 <strong>Reportes</strong></td><td>Analíticas y reportes</td></tr>
+          <tr><td>🔔 <strong>Notificaciones</strong></td><td>Centro de notificaciones</td></tr>
+          <tr><td>⚙️ <strong>Configuración</strong></td><td>Ajustes del sistema</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/menu_lateral.png" alt="Menú Lateral" class="screen-img" />
+        <p class="screen-caption">Menú de Navegación Lateral</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 04 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S5: GESTIÓN DE PARQUEADEROS
+     ========================================================= -->
+<div id="s5" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 05</div>
+    <h1>Gestión de <span class="accent">Parqueaderos</span></h1>
+    <p class="lead">Crea, visualiza y administra todos los parqueaderos registrados en la plataforma.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="sheet-tabs">
+    <div class="sheet-tab active" onclick="showSheet('pq1',this)">Ver Parqueaderos</div>
+    <div class="sheet-tab" onclick="showSheet('pq2',this)">Crear Parqueadero</div>
+    <div class="sheet-tab" onclick="showSheet('pq3',this)">Editar Parqueadero</div>
+    <div class="sheet-tab" onclick="showSheet('pq4',this)">Editar Tarifas</div>
+  </div>
+
+  <div class="sheet-content">
+
+    <div id="pq1" class="sheet-panel active">
+      <h3>Lista de Parqueaderos</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>La pantalla de parqueaderos muestra todos los parqueaderos registrados en el sistema con su estado de disponibilidad en tiempo real.</p>
+          <table>
+            <thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nombre</strong></td><td>Nombre comercial del parqueadero</td></tr>
+              <tr><td><strong>Estado</strong></td><td>Disponible / Lleno / Cerrado</td></tr>
+              <tr><td><strong>Espacios</strong></td><td>Disponibles vs total de espacios</td></tr>
+              <tr><td><strong>Acciones</strong></td><td>Editar, ver detalles o gestionar</td></tr>
+            </tbody>
+          </table>
+          <div class="alert alert-tip" style="margin-top:1rem">
+            Toca el ícono <strong>Editar</strong> junto a cualquier parqueadero para acceder a sus opciones de edición rápida.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/parqueaderos.png" alt="Lista Parqueaderos" class="screen-img" />
+            <p class="screen-caption">Lista de Parqueaderos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pq2" class="sheet-panel">
+      <h3>Crear Nuevo Parqueadero</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>Para registrar un nuevo parqueadero en el sistema, completa el formulario con toda la información requerida.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>Toca el botón <strong>"+ Nuevo Parqueadero"</strong> en la pantalla de parqueaderos.</p></div></div>
+            <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Completa los campos obligatorios del formulario.</p></div></div>
+            <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Verifica la información ingresada y presiona <strong>"Guardar"</strong>.</p></div></div>
+          </div>
+          <table style="margin-top:1rem">
+            <thead><tr><th>Campo</th><th>Descripción</th><th>Tipo</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nombre</strong></td><td>Nombre comercial</td><td>Texto -Obligatorio</td></tr>
+              <tr><td><strong>Dirección</strong></td><td>Ubicación del parqueadero</td><td>Texto -Obligatorio</td></tr>
+              <tr><td><strong>Teléfono</strong></td><td>Número de contacto</td><td>Numérico -Obligatorio</td></tr>
+              <tr><td><strong>Capacidad total</strong></td><td>Total de espacios disponibles</td><td>Numérico -Obligatorio</td></tr>
+              <tr><td><strong>Horario</strong></td><td>Apertura y cierre del establecimiento</td><td>Hora -Obligatorio</td></tr>
+              <tr><td><strong>Servicios</strong></td><td>Cubierto, vigilancia, EV, etc.</td><td>Selección</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/crear_parqueadero.png" alt="Crear Parqueadero" class="screen-img" />
+            <p class="screen-caption">Formulario Crear Parqueadero</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pq3" class="sheet-panel">
+      <h3>Editar Parqueadero</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>Modifica la información de un parqueadero existente. Todos los campos del formulario de creación son editables.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>En la lista de parqueaderos, toca el ícono de edición del parqueadero a modificar.</p></div></div>
+            <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Actualiza los campos que necesites modificar.</p></div></div>
+            <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Presiona <strong>"Guardar Cambios"</strong> para confirmar la actualización.</p></div></div>
+          </div>
+          <div class="alert alert-warning" style="margin-top:1rem">
+            <strong>⚠ Atención:</strong> Los cambios en capacidad afectan directamente la disponibilidad visible para los usuarios. Asegúrate de actualizar correctamente el número de espacios.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/editar_parqueadero.png" alt="Editar Parqueadero" class="screen-img" />
+            <p class="screen-caption">Editar Parqueadero</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pq4" class="sheet-panel">
+      <h3>Editar Tarifas del Parqueadero</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>Configura las tarifas específicas de cada parqueadero según tipo de vehículo, horario o modalidad de cobro.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>Accede a un parqueadero y selecciona la opción <strong>"Editar Tarifas"</strong></p></div></div>
+            <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Define las tarifas por hora, fracción o día según el tipo de vehículo.</p></div></div>
+            <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Guarda los cambios. Las nuevas tarifas se aplicarán a las próximas reservas.</p></div></div>
+          </div>
+          <div class="alert alert-info" style="margin-top:1rem">
+            Los cambios de tarifa <strong>no afectan reservas ya confirmadas</strong>. Solo aplican a nuevas reservas realizadas después de la actualización.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/editar_taifas.png" alt="Editar Tarifas" class="screen-img" />
+            <p class="screen-caption">Editar Tarifas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 05 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S6: GESTIÓN DE ESPACIOS
+     ========================================================= -->
+<div id="s6" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 06</div>
+    <h1>Gestión de <span class="accent">Espacios</span></h1>
+    <p class="lead">Administra los espacios individuales de cada parqueadero: disponibilidad, estado y asignación en tiempo real.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>La pantalla de espacios muestra la distribución visual de todos los espacios de un parqueadero, con su estado actual representado mediante colores.</p>
+
+      <h3>Estados de los Espacios</h3>
+      <div class="status-grid">
+        <div class="status-item green"><span class="s-dot green-dot"></span><strong>Disponible</strong><p>El espacio está libre y puede ser reservado por un usuario.</p></div>
+        <div class="status-item red"><span class="s-dot red-dot"></span><strong>Ocupado</strong><p>El espacio tiene una reserva activa en este momento.</p></div>
+        <div class="status-item orange"><span class="s-dot orange-dot"></span><strong>Reservado</strong><p>El espacio tiene una reserva pendiente de inicio.</p></div>
+        <div class="status-item gray"><span class="s-dot gray-dot"></span><strong>Fuera de servicio</strong><p>El espacio está inhabilitado temporalmente.</p></div>
+      </div>
+
+      <h3 style="margin-top:1.5rem">Acciones Disponibles</h3>
+      <div class="feature-list">
+        <div class="feature-item">
+          <span class="fi-icon"></span>
+          <div><strong>Editar espacio</strong><p>Modifica el nombre, tipo o estado de un espacio específico.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon"></span>
+          <div><strong>Cambiar estado</strong><p>Marca un espacio como disponible, ocupado o fuera de servicio manualmente.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="fi-icon"></span>
+          <div><strong>Agregar espacios</strong><p>Añade nuevos espacios al parqueadero cuando se amplíe la capacidad física.</p></div>
+        </div>
+      </div>
+
+      <div class="alert alert-tip" style="margin-top:1rem">
+        Usa la opción <strong>"Actualizar disponibilidad"</strong> para sincronizar el estado de los espacios con el sistema en caso de discrepancias.
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/espacios.png" alt="Gestión de Espacios" class="screen-img" />
+        <p class="screen-caption">Gestión de Espacios</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 06 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S7: RESERVAS
+     ========================================================= -->
+<div id="s7" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 07</div>
+    <h1>Gestión de <span class="accent">Reservas</span></h1>
+    <p class="lead">Visualiza, crea y administra todas las reservas del sistema con control total sobre su estado y detalles.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="sheet-tabs">
+    <div class="sheet-tab active" onclick="showSheet('rv1',this)">Lista de Reservas</div>
+    <div class="sheet-tab" onclick="showSheet('rv2',this)">Crear Reserva</div>
+    <div class="sheet-tab" onclick="showSheet('rv3',this)">Detalle de Reserva</div>
+  </div>
+
+  <div class="sheet-content">
+
+    <div id="rv1" class="sheet-panel active">
+      <h3>Lista de Reservas</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>La pantalla de reservas presenta el listado completo de todas las reservas del sistema con información resumida de cada una.</p>
+          <table>
+            <thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Usuario</strong></td><td>Nombre del cliente que realizó la reserva</td></tr>
+              <tr><td><strong>Parqueadero</strong></td><td>Nombre del parqueadero reservado</td></tr>
+              <tr><td><strong>Espacio</strong></td><td>Número o código del espacio asignado</td></tr>
+              <tr><td><strong>Fecha/Hora entrada</strong></td><td>Inicio programado de la reserva</td></tr>
+              <tr><td><strong>Estado</strong></td><td>Activa / Completada / Cancelada</td></tr>
+              <tr><td><strong>Monto</strong></td><td>Valor total cobrado por la reserva</td></tr>
+            </tbody>
+          </table>
+          <div class="alert alert-tip" style="margin-top:1rem">
+            Usa el filtro de búsqueda para encontrar reservas por usuario, parqueadero, fecha o estado específico.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/reservas.png" alt="Lista de Reservas" class="screen-img" />
+            <p class="screen-caption">Lista de Reservas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rv2" class="sheet-panel">
+      <h3>Crear Reserva Manual</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>El administrador puede crear reservas manualmente para usuarios que lo soliciten por canales externos (teléfono, presencial, etc.).</p>
+          <div class="steps">
+            <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>En la pantalla de reservas, toca <strong>"+ Nueva Reserva"</strong></p></div></div>
+            <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Selecciona el parqueadero y el espacio disponible.</p></div></div>
+            <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Asigna la reserva a un usuario registrado o crea una reserva anónima.</p></div></div>
+            <div class="step"><div class="step-num sm">4</div><div class="step-body"><p>Define fecha, hora de entrada y duración estimada.</p></div></div>
+            <div class="step"><div class="step-num sm">5</div><div class="step-body"><p>Confirma y presiona <strong>"Crear Reserva"</strong> El sistema generará automáticamente el código de reserva.</p></div></div>
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/crear_reservas.png" alt="Crear Reserva" class="screen-img" />
+            <p class="screen-caption">Crear Reserva Manual</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rv3" class="sheet-panel">
+      <h3>Detalle de Reserva</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>Al seleccionar una reserva de la lista, se despliega el detalle completo con toda la información de la transacción.</p>
+          <table>
+            <thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Código</strong></td><td>Identificador único de la reserva (ej. PKN-8542)</td></tr>
+              <tr><td><strong>Usuario</strong></td><td>Datos del cliente</td></tr>
+              <tr><td><strong>Parqueadero</strong></td><td>Nombre y dirección del lugar</td></tr>
+              <tr><td><strong>Espacio</strong></td><td>Nivel y número de espacio asignado</td></tr>
+              <tr><td><strong>Entrada</strong></td><td>Fecha y hora de inicio</td></tr>
+              <tr><td><strong>Duración</strong></td><td>Tiempo total de la reserva</td></tr>
+              <tr><td><strong>Total</strong></td><td>Monto cobrado</td></tr>
+              <tr><td><strong>Estado de pago</strong></td><td>Pagado / Pendiente / Reembolsado</td></tr>
+            </tbody>
+          </table>
+          <div class="feature-list" style="margin-top:1rem">
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Cancelar reserva</strong><p>El administrador puede cancelar y gestionar el reembolso desde esta pantalla.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Modificar reserva</strong><p>Ajusta la duración o el espacio asignado si es necesario.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/detalle_reserva.png" alt="Detalle Reserva" class="screen-img" />
+            <p class="screen-caption">Detalle de Reserva</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 07 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S8: USUARIOS Y ROLES
+     ========================================================= -->
+<div id="s8" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 08</div>
+    <h1>Usuarios y <span class="accent">Roles</span></h1>
+    <p class="lead">Gestiona las cuentas de usuarios del sistema y define los permisos de acceso según el rol de cada persona.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="sheet-tabs">
+    <div class="sheet-tab active" onclick="showSheet('ur1',this)">Gestión de Usuarios</div>
+    <div class="sheet-tab" onclick="showSheet('ur2',this)">Roles y Permisos</div>
+    <div class="sheet-tab" onclick="showSheet('ur3',this)">Invitar Usuario</div>
+  </div>
+
+  <div class="sheet-content">
+
+    <div id="ur1" class="sheet-panel active">
+      <h3>Lista de Usuarios</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>La pantalla de gestión de usuarios muestra todos los usuarios registrados en el sistema, con su información básica y opciones de administración.</p>
+          <table>
+            <thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Nombre</strong></td><td>Nombre completo del usuario</td></tr>
+              <tr><td><strong>Correo</strong></td><td>Dirección de email registrada</td></tr>
+              <tr><td><strong>Rol</strong></td><td>Tipo de cuenta (Admin / Operador / Usuario)</td></tr>
+              <tr><td><strong>Estado</strong></td><td>Activo / Suspendido / Pendiente</td></tr>
+              <tr><td><strong>Acciones</strong></td><td>Editar, suspender o eliminar cuenta</td></tr>
+            </tbody>
+          </table>
+          <div class="alert alert-warning" style="margin-top:1rem">
+            <strong>⚠ Cuidado:</strong> La eliminación de un usuario es permanente e irreversible. Considera suspender la cuenta en lugar de eliminarla si hay historial de reservas asociado.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/gestion-usuarios.png" alt="Gestión Usuarios" class="screen-img" />
+            <p class="screen-caption">Gestión de Usuarios</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ur2" class="sheet-panel">
+      <h3>Roles y Permisos del Sistema</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>ParkNow maneja un sistema de roles jerárquico que define qué puede ver y hacer cada tipo de usuario dentro del panel administrativo.</p>
+          <table>
+            <thead><tr><th>Rol</th><th>Accesos</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="role-badge admin">Administrador</span></td>
+                <td>Acceso total a todos los módulos. Puede crear y eliminar cuentas, gestionar todos los parqueaderos y ver reportes financieros completos.</td>
+              </tr>
+              <tr>
+                <td><span class="role-badge operator">Operador</span></td>
+                <td>Gestión de espacios y reservas de parqueaderos asignados. Sin acceso a configuración ni reportes financieros globales.</td>
+              </tr>
+        
+              <tr>
+                <td><span class="role-badge user">Usuario</span></td>
+                <td>Acceso exclusivo a funciones de usuario final: buscar, reservar y pagar. Sin acceso al panel administrativo.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/roles.png" alt="Roles del Sistema" class="screen-img" />
+            <p class="screen-caption">Roles del Sistema</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ur3" class="sheet-panel">
+      <h3>Invitar Nuevo Usuario</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>El administrador puede invitar a nuevos miembros del equipo al panel administrativo directamente desde la app.</p>
+          <div class="steps">
+            <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>En Gestión de Usuarios, toca el botón <strong>"Invitar Sesión"</strong></p></div></div>
+            <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Ingresa el <strong>correo electrónico</strong> del nuevo administrador u operador.</p></div></div>
+            <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Selecciona el <strong>rol</strong> que tendrá en el sistema.</p></div></div>
+            <div class="step"><div class="step-num sm">4</div><div class="step-body"><p>Presiona <strong>"Ingresar"</strong> El sistema enviará una invitación al correo indicado.</p></div></div>
+          </div>
+          <div class="alert alert-info" style="margin-top:1rem">
+            El invitado recibirá un correo con un enlace de activación válido por <strong>48 horas</strong>. Si no activa en ese tiempo, deberás reenviar la invitación.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/login.png" alt="Invitar Usuario" class="screen-img" />
+            <p class="screen-caption">Invitar / Sesión de Usuario</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 08 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S9: REPORTES Y ANALÍTICAS
+     ========================================================= -->
+<div id="s9" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 09</div>
+    <h1>Reportes y <span class="accent">Analíticas</span></h1>
+    <p class="lead">Accede a reportes financieros, operativos y visualizaciones de demanda para tomar decisiones informadas.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="sheet-tabs">
+    <div class="sheet-tab active" onclick="showSheet('rp1',this)">Reporte Financiero</div>
+    <div class="sheet-tab" onclick="showSheet('rp2',this)">Reportes Operativos</div>
+    <div class="sheet-tab" onclick="showSheet('rp3',this)">Mapa de Calor</div>
+  </div>
+
+  <div class="sheet-content">
+
+    <div id="rp1" class="sheet-panel active">
+      <h3>Reportes Financieros</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>El módulo financiero proporciona métricas de ingresos, transacciones y rendimiento económico de los parqueaderos.</p>
+          <table>
+            <thead><tr><th>Métrica</th><th>Descripción</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Ingresos totales</strong></td><td>Suma de todos los pagos del período seleccionado</td></tr>
+              <tr><td><strong>Transacciones</strong></td><td>Número total de reservas pagadas</td></tr>
+              <tr><td><strong>Ticket promedio</strong></td><td>Valor promedio por reserva</td></tr>
+              <tr><td><strong>Comparativo</strong></td><td>Variación respecto al período anterior</td></tr>
+            </tbody>
+          </table>
+          <div class="feature-list" style="margin-top:1rem">
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Filtrar por período</strong><p>Selecciona día, semana, mes o rango personalizado para analizar los datos.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Exportar reporte</strong><p>Descarga el reporte en formato PDF o Excel para compartir con la dirección.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/reporte_fianciero.png" alt="Reporte Financiero" class="screen-img" />
+            <p class="screen-caption">Reporte Financiero</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rp2" class="sheet-panel">
+      <h3>Reportes Operativos</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>Los reportes operativos muestran el rendimiento y la actividad del sistema mediante gráficas de barras y tablas de resumen.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Gráfica de ocupación</strong><p>Visualiza la tendencia de ocupación diaria o semanal mediante barras comparativas.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Tasa de ocupación</strong><p>Porcentaje promedio de espacios utilizados en el período analizado.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+              <div><strong>Horas pico</strong><p>Identifica las franjas horarias de mayor demanda para optimizar la operación.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon"></span>
+            </div>
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/reportes.png" alt="Reportes Operativos" class="screen-img" />
+            <p class="screen-caption">Reportes Operativos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="rp3" class="sheet-panel">
+      <h3>Mapa de Calor</h3>
+      <div class="feature-layout">
+        <div class="feature-text">
+          <p>El mapa de calor es una herramienta de análisis visual que muestra las zonas geográficas con mayor concentración de demanda de parqueadero.</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="fi-icon">🔴</span>
+              <div><strong>Zonas de alta demanda</strong><p>Las áreas en rojo indican sectores con mayor concentración de reservas y uso frecuente.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon">🟡</span>
+              <div><strong>Zonas de demanda media</strong><p>Las áreas en amarillo representan zonas con actividad moderada y potencial de crecimiento.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="fi-icon">🟢</span>
+              <div><strong>Zonas de baja demanda</strong><p>Áreas con poca actividad. Útil para identificar parqueaderos que necesitan estrategias de promoción.</p></div>
+            </div>
+          </div>
+          <div class="alert alert-tip" style="margin-top:1rem">
+            Usa el mapa de calor para <strong>decidir dónde abrir nuevos parqueaderos</strong> o dónde enfocar campañas de marketing para aumentar ocupación.
+          </div>
+        </div>
+        <div class="feature-screens">
+          <div class="screen-preview">
+            <img src="img/mapa_Calor.png" alt="Mapa de Calor" class="screen-img" />
+            <p class="screen-caption">Mapa de Calor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 09 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S10: TARIFAS
+     ========================================================= -->
+<div id="s10" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 10</div>
+    <h1>Gestión de <span class="accent">Tarifas</span></h1>
+    <p class="lead">Configura y administra las tarifas globales del sistema aplicables a todos los parqueaderos de la plataforma.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>El módulo de tarifas permite al administrador configurar los esquemas de cobro globales que se aplicarán en el sistema. Complementa la configuración de tarifas individuales por parqueadero.</p>
+
+      <h3>Tipos de Tarifa</h3>
+      <table>
+        <thead><tr><th>Tipo</th><th>Descripción</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Por hora</strong></td><td>Cobro estándar por cada hora o fracción</td><td>$4.000 / hora</td></tr>
+          <tr><td><strong>Tarifa mínima</strong></td><td>Cobro mínimo independiente del tiempo</td><td>$2.000 (primera media hora)</td></tr>
+          <tr><td><strong>Tarifa nocturna</strong></td><td>Precio especial para horario nocturno</td><td>$3.000 / hora (10pm–6am)</td></tr>
+          <tr><td><strong>Tarifa mensualidad</strong></td><td>Abono mensual para usuarios frecuentes</td><td>$150.000 / mes</td></tr>
+          <tr><td><strong>Tarifa especial</strong></td><td>Descuentos para categorías (discapacidad, etc.)</td><td>50% descuento</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:1.5rem">Cómo crear una nueva tarifa</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>Accede a <strong>Menú → Tarifas</strong></p></div></div>
+        <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Toca <strong>"+ Nueva Tarifa"</strong></p></div></div>
+        <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Define el nombre, tipo, valor, vigencia y parqueaderos donde aplica.</p></div></div>
+        <div class="step"><div class="step-num sm">4</div><div class="step-body"><p>Presiona <strong>"Guardar Tarifa"</strong> para activarla.</p></div></div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/tarifas.png" alt="Gestión de Tarifas" class="screen-img" />
+        <p class="screen-caption">Gestión de Tarifas</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warning">
+    <strong>⚠ Importante:</strong> Los cambios en las tarifas globales afectan a todos los parqueaderos que no tengan una tarifa personalizada configurada. Revisa el impacto antes de guardar cambios masivos.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 10 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S11: NOTIFICACIONES
+     ========================================================= -->
+<div id="s11" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 11</div>
+    <h1><span class="accent">Notificaciones</span></h1>
+    <p class="lead">Gestiona el centro de notificaciones del sistema y envía alertas a los usuarios de la plataforma.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>El módulo de notificaciones centraliza todas las alertas del sistema y permite al administrador revisar, gestionar y enviar comunicaciones a los usuarios.</p>
+
+      <h3>Tipos de Notificaciones</h3>
+      <div class="status-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="status-item blue-item"><strong>🔔 Reservas</strong><p>Confirmaciones, recordatorios y vencimientos de reservas.</p></div>
+        <div class="status-item green"><strong>💳 Pagos</strong><p>Confirmaciones de transacciones y recibos de pago.</p></div>
+        <div class="status-item orange"><strong>⚠️ Sistema</strong><p>Alertas de mantenimiento, errores y actualizaciones.</p></div>
+        <div class="status-item gray"><strong>📣 Promociones</strong><p>Comunicaciones de ofertas y descuentos especiales.</p></div>
+      </div>
+
+      <h3 style="margin-top:1.5rem">Enviar Notificación Masiva</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num sm">1</div><div class="step-body"><p>Accede a <strong>Menú → Notificaciones</strong></p></div></div>
+        <div class="step"><div class="step-num sm">2</div><div class="step-body"><p>Toca <strong>"Nueva Notificación"</strong></p></div></div>
+        <div class="step"><div class="step-num sm">3</div><div class="step-body"><p>Define el título, mensaje y audiencia destinataria (todos / por rol / usuarios específicos).</p></div></div>
+        <div class="step"><div class="step-num sm">4</div><div class="step-body"><p>Programa el envío o presiona <strong>"Enviar Ahora"</strong></p></div></div>
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/notificaciones.png" alt="Notificaciones" class="screen-img" />
+        <p class="screen-caption">Centro de Notificaciones</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 11 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S12: CONFIGURACIÓN
+     ========================================================= -->
+<div id="s12" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 12</div>
+    <h1><span class="accent">Configuración</span> del Sistema</h1>
+    <p class="lead">Ajusta los parámetros generales del sistema, preferencias de la plataforma y configuración de integraciones.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="feature-layout">
+    <div class="feature-text">
+      <p>El módulo de configuración centraliza todos los parámetros ajustables del sistema ParkNow. Solo el rol de <strong>Administrador Principal</strong> tiene acceso completo a esta sección.</p>
+
+      <h3>Opciones de Configuración</h3>
+      <table>
+        <thead><tr><th>Sección</th><th>Qué puedes configurar</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Perfil de empresa</strong></td><td>Datos de la empresa, logo, información de contacto</td></tr>
+          <tr><td><strong>Notificaciones</strong></td><td>Tipos de alertas activas y canales de envío</td></tr>
+          <tr><td><strong>Pagos</strong></td><td>Métodos de pago habilitados, pasarela y comisiones</td></tr>
+          <tr><td><strong>Usuarios</strong></td><td>Políticas de registro y verificación de cuentas</td></tr>
+          <tr><td><strong>Seguridad</strong></td><td>Tiempo de sesión, autenticación 2FA, políticas de contraseña</td></tr>
+          <tr><td><strong>Integraciones</strong></td><td>APIs externas, mapas y sistemas de terceros</td></tr>
+          <tr><td><strong>Aplicación</strong></td><td>Idioma, zona horaria y moneda predeterminada</td></tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-warning" style="margin-top:1.5rem">
+        <strong>⚠ Precaución:</strong> Los cambios en la configuración del sistema pueden afectar la experiencia de todos los usuarios. Realiza modificaciones en horarios de baja actividad y documenta los cambios realizados.
+      </div>
+    </div>
+    <div class="feature-screens">
+      <div class="screen-preview">
+        <img src="img/configuracion.png" alt="Configuración" class="screen-img" />
+        <p class="screen-caption">Configuración del Sistema</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 12 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S13: RESOLUCIÓN DE PROBLEMAS
+     ========================================================= -->
+<div id="s13" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 13</div>
+    <h1>Resolución de <span class="accent">Problemas</span></h1>
+    <p class="lead">Guía de solución para los errores más frecuentes en el panel de administración de ParkNow.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>Errores Frecuentes</h2>
+  <div class="error-list">
+
+    <div class="error-card">
+      <div class="error-header">
+        <span class="error-code">ADM-01</span>
+        <span class="error-title">No puedo iniciar sesión como administrador</span>
+      </div>
+      <div class="error-body">
+        <div class="error-msg"><span class="msg-label">Síntoma:</span><em> Las credenciales correctas no funcionan o el sistema rechaza el acceso.</em></div>
+        <p><strong>Causa:</strong> Cuenta no activada, credenciales incorrectas o cuenta sin rol de administrador asignado.</p>
+        <div class="solution-steps">
+          <div class="sol-title"> Solución:</div>
+          <ol>
+            <li>Verifica que estés usando el correo con privilegios de administrador (no el correo de usuario regular).</li>
+            <li>Restablece la contraseña desde <strong>"¿Olvidaste tu contraseña?"</strong>.</li>
+            <li>Confirma con el administrador principal que tu cuenta tiene el rol correcto asignado.</li>
+            <li>Si el problema persiste, contacta a soporte técnico con el correo de tu cuenta.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-header">
+        <span class="error-code">ADM-02</span>
+        <span class="error-title">El dashboard no carga los datos correctamente</span>
+      </div>
+      <div class="error-body">
+        <div class="error-msg"><span class="msg-label">Síntoma:</span><em> Las métricas aparecen en cero o el mapa no muestra información.</em></div>
+        <p><strong>Causa:</strong> Conexión a internet inestable, sesión expirada o error temporal del servidor.</p>
+        <div class="solution-steps">
+          <div class="sol-title"> Solución:</div>
+          <ol>
+            <li>Verifica tu conexión a Internet y cambia a Wi-Fi si usas datos móviles.</li>
+            <li>Cierra y vuelve a abrir la aplicación para renovar la sesión.</li>
+            <li>Espera 2–3 minutos y recarga el dashboard.</li>
+            <li>Si persiste, borra la caché de la app desde la configuración del dispositivo.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-header">
+        <span class="error-code">ADM-03</span>
+        <span class="error-title">No puedo crear o editar un parqueadero</span>
+      </div>
+      <div class="error-body">
+        <div class="error-msg"><span class="msg-label">Síntoma:</span><em> El botón de guardar no responde o aparece un mensaje de error al guardar.</em></div>
+        <p><strong>Causa:</strong> Campos obligatorios incompletos, dirección no reconocida por el sistema de mapas o permisos insuficientes.</p>
+        <div class="solution-steps">
+          <div class="sol-title"> Solución:</div>
+          <ol>
+            <li>Verifica que todos los campos marcados con asterisco (*) estén completos.</li>
+            <li>Asegúrate de que la dirección ingresada sea válida y reconocible en el mapa.</li>
+            <li>Confirma que tu rol tiene permisos para crear/editar parqueaderos.</li>
+            <li>Intenta nuevamente con conexión Wi-Fi estable.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-header">
+        <span class="error-code">ADM-04</span>
+        <span class="error-title">Los reportes financieros no coinciden con los pagos reales</span>
+      </div>
+      <div class="error-body">
+        <div class="error-msg"><span class="msg-label">Síntoma:</span><em> Los totales en el reporte difieren de lo esperado o hay transacciones faltantes.</em></div>
+        <p><strong>Causa:</strong> Filtro de fechas incorrecto, reembolsos no reflejados aún o sincronización pendiente con la pasarela de pagos.</p>
+        <div class="solution-steps">
+          <div class="sol-title"> Solución:</div>
+          <ol>
+            <li>Verifica el rango de fechas del filtro aplicado en el reporte.</li>
+            <li>Ten en cuenta que los reembolsos pueden tardar hasta 24 horas en reflejarse.</li>
+            <li>Compara con el reporte de la pasarela de pagos para identificar discrepancias.</li>
+            <li>Si hay diferencias significativas, repórtalo a soporte técnico con capturas de pantalla.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-header">
+        <span class="error-code">ADM-05</span>
+        <span class="error-title">Un usuario no puede acceder a su cuenta</span>
+      </div>
+      <div class="error-body">
+        <div class="error-msg"><span class="msg-label">Síntoma:</span><em> Un usuario reporta que no puede iniciar sesión o que su cuenta está bloqueada.</em></div>
+        <p><strong>Causa:</strong> Cuenta suspendida por el administrador, contraseña expirada o múltiples intentos fallidos.</p>
+        <div class="solution-steps">
+          <div class="sol-title"> Solución (desde el panel de administración):</div>
+          <ol>
+            <li>Ve a <strong>Gestión de Usuarios</strong> y busca la cuenta del usuario.</li>
+            <li>Verifica el estado de la cuenta (activa / suspendida / bloqueada).</li>
+            <li>Si está suspendida, toca <strong>"Activar cuenta"</strong>.</li>
+            <li>Si está bloqueada por intentos fallidos, selecciona <strong>"Desbloquear cuenta"</strong>.</li>
+            <li>Comunica al usuario que puede intentar de nuevo o restablecer su contraseña.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert alert-info" style="margin-top:2rem">
+    <strong>¿Error no documentado?</strong> Si encuentras un problema no listado aquí, documéntalo con capturas de pantalla y repórtalo a <strong>soporte@parknow.com</strong> indicando el código de error (si aparece), el módulo afectado y los pasos para reproducirlo.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 13 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S14: CONSEJOS DE SEGURIDAD
+     ========================================================= -->
+<div id="s14" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 14</div>
+    <h1>Consejos de <span class="accent">Seguridad</span></h1>
+    <p class="lead">Prácticas esenciales para proteger el panel administrativo, los datos de los usuarios y la integridad del sistema.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>Protección de la Cuenta Administrativa</h2>
+  <div class="security-grid">
+    <div class="sec-card priority">
+      <div class="sec-icon">🔐</div>
+      <h3>Contraseña robusta</h3>
+      <p>Las cuentas de administrador deben usar contraseñas de mínimo <strong>12 caracteres</strong> con combinación de mayúsculas, minúsculas, números y símbolos especiales.</p>
+    </div>
+    <div class="sec-card priority">
+      <div class="sec-icon">📲</div>
+      <h3>Autenticación en dos pasos (2FA)</h3>
+      <p>Activa obligatoriamente la verificación en dos pasos para todas las cuentas administrativas. Esto previene accesos no autorizados incluso si la contraseña es comprometida.</p>
+    </div>
+    <div class="sec-card">
+      <div class="sec-icon">🚪</div>
+      <h3>Cierre de sesión obligatorio</h3>
+      <p>Siempre cierra sesión al terminar tu turno de trabajo. Configura el cierre automático de sesión después de <strong>15 minutos</strong> de inactividad.</p>
+    </div>
+    <div class="sec-card">
+      <div class="sec-icon">📵</div>
+      <h3>Dispositivos autorizados</h3>
+      <p>Usa el panel administrativo únicamente desde dispositivos de uso exclusivo del equipo. Nunca en dispositivos personales compartidos o públicos.</p>
+    </div>
+    <div class="sec-card">
+      <div class="sec-icon">👁️</div>
+      <h3>Monitoreo de accesos</h3>
+      <p>Revisa periódicamente el registro de accesos al sistema. Cualquier inicio de sesión sospechoso debe reportarse y la contraseña cambiarse inmediatamente.</p>
+    </div>
+    <div class="sec-card">
+      <div class="sec-icon">🔄</div>
+      <h3>Rotación de contraseñas</h3>
+      <p>Actualiza las contraseñas de cuentas administrativas cada <strong>90 días</strong> o de forma inmediata cuando un miembro del equipo deja la organización.</p>
+    </div>
+  </div>
+
+  <h2>Protección de Datos de Usuarios</h2>
+  <div class="data-prot-list">
+    <div class="dp-item">
+      <span class="dp-icon">⚖️</span>
+      <div>
+        <strong>Principio de mínimo privilegio</strong>
+        <p>Asigna a cada miembro del equipo únicamente los permisos estrictamente necesarios para su función. No des acceso de administrador a quien solo necesita consultar reportes.</p>
+      </div>
+    </div>
+    <div class="dp-item">
+      <span class="dp-icon">🗄️</span>
+      <div>
+        <strong>No exportar datos innecesariamente</strong>
+        <p>Evita exportar bases de datos con información personal de usuarios sin una justificación clara y documentada. Los reportes exportados deben almacenarse en ubicaciones seguras.</p>
+      </div>
+    </div>
+    <div class="dp-item">
+      <span class="dp-icon">📋</span>
+      <div>
+        <strong>Auditoría de acciones</strong>
+        <p>El sistema registra todas las acciones administrativas. Cualquier modificación de datos de usuarios, eliminación de registros o cambio de configuración queda documentado con fecha, hora y usuario responsable.</p>
+      </div>
+    </div>
+    <div class="dp-item">
+      <span class="dp-icon">🔒</span>
+      <div>
+        <strong>Cumplimiento normativo</strong>
+        <p>El tratamiento de datos personales debe cumplir con la <strong>Ley 1581 de 2012</strong> (Habeas Data en Colombia) y las políticas internas de privacidad de ParkNow.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warning">
+    <strong>⚠ Incidente de seguridad:</strong> Si sospechas que el panel fue accedido de forma no autorizada, actúa de inmediato: cambia las contraseñas de todas las cuentas administrativas, revisa el log de accesos y notifica al equipo técnico en <strong>seguridad@parknow.com</strong>.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 14 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S15: TÉRMINOS Y CONDICIONES
+     ========================================================= -->
+<div id="s15" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 15</div>
+    <h1>Términos y <span class="accent">Condiciones</span></h1>
+    <p class="lead">Condiciones de uso del panel de administración ParkNow para personal autorizado.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="terms-block">
+    <h2>1. Acceso Autorizado</h2>
+    <p>El acceso al panel de administración de ParkNow está reservado exclusivamente para personal autorizado por la organización. El uso del panel implica la aceptación de las responsabilidades y obligaciones descritas en este documento. El acceso no autorizado está prohibido y puede resultar en acciones legales.</p>
+
+    <h2>2. Responsabilidades del Administrador</h2>
+    <p>El administrador del sistema asume plena responsabilidad por:</p>
+    <ul class="terms-list">
+      <li>La veracidad y exactitud de los datos ingresados al sistema.</li>
+      <li>La correcta gestión de los roles y permisos de los usuarios bajo su supervisión.</li>
+      <li>La confidencialidad de sus credenciales de acceso y las de los usuarios administrados.</li>
+      <li>El cumplimiento de las normativas aplicables en materia de protección de datos personales.</li>
+      <li>Reportar de forma inmediata cualquier anomalía, brecha de seguridad o uso indebido detectado.</li>
+    </ul>
+
+    <h2>3. Uso Aceptable del Panel</h2>
+    <p>El panel de administración debe usarse exclusivamente para fines operativos de la plataforma ParkNow. Queda estrictamente prohibido:</p>
+    <ul class="terms-list">
+      <li>Acceder a datos de usuarios con fines distintos a la operación del servicio.</li>
+      <li>Compartir credenciales de administrador con personas no autorizadas.</li>
+      <li>Modificar, eliminar o exportar datos de usuarios sin justificación operativa documentada.</li>
+      <li>Usar el panel para beneficio personal o de terceros ajenos a la organización.</li>
+      <li>Intentar vulnerar las medidas de seguridad o acceder a módulos fuera del rol asignado.</li>
+    </ul>
+
+    <h2>4. Confidencialidad</h2>
+    <p>Toda la información a la que el administrador tenga acceso en el ejercicio de sus funciones, incluyendo datos personales de usuarios, información financiera y configuraciones del sistema, es estrictamente confidencial. Esta obligación de confidencialidad se mantiene incluso después de que el administrador deje de prestar sus servicios.</p>
+
+    <h2>5. Tratamiento de Datos Personales</h2>
+    <p>El administrador actúa como encargado del tratamiento de datos personales en nombre de ParkNow y deberá:</p>
+    <ul class="terms-list">
+      <li>Tratar los datos únicamente para las finalidades autorizadas.</li>
+      <li>Implementar las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos.</li>
+      <li>No transferir datos a terceros sin autorización expresa y por escrito.</li>
+      <li>Notificar a ParkNow cualquier brecha de seguridad que afecte datos personales en el menor tiempo posible.</li>
+    </ul>
+
+    <h2>6. Auditoría y Registro de Actividades</h2>
+    <p>Todas las acciones realizadas en el panel de administración son registradas en el log de auditoría del sistema, incluyendo la identidad del administrador, la acción realizada, la fecha y la hora. Este registro puede ser consultado por ParkNow en cualquier momento con fines de auditoría, investigación de incidentes o cumplimiento regulatorio.</p>
+
+    <h2>7. Consecuencias del Incumplimiento</h2>
+    <p>El incumplimiento de los presentes términos podrá resultar en la suspensión o revocación inmediata del acceso al panel, acciones disciplinarias internas, responsabilidad civil y/o penal de conformidad con la legislación colombiana aplicable.</p>
+
+    <h2>8. Modificaciones</h2>
+    <p>ParkNow se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán notificados a los administradores mediante correo electrónico y/o notificación en la aplicación. El uso continuado del panel tras la notificación implica aceptación de los nuevos términos.</p>
+
+    <h2>9. Legislación Aplicable</h2>
+    <p>Estos términos se rigen por la legislación de la República de Colombia, incluyendo la Ley 1581 de 2012 (Protección de Datos Personales) y la Ley 1273 de 2009 (Delitos Informáticos).</p>
+  </div>
+
+  <div class="alert alert-info" style="margin-top:2rem">
+    <strong>Vigencia:</strong> Términos actualizados en <strong>enero de 2025</strong>. Al acceder al panel administrativo, el administrador confirma haber leído y aceptado estas condiciones.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 15 / 16</span>
+  </div>
+</div>
+
+
+<!-- =========================================================
+     S16: SOPORTE TÉCNICO
+     ========================================================= -->
+<div id="s16" class="section">
+  <div class="section-hero">
+    <div class="section-tag">Sección 16</div>
+    <h1>Soporte <span class="accent">Técnico</span></h1>
+    <p class="lead">Canales de contacto y recursos disponibles para administradores que necesiten asistencia técnica especializada.</p>
+  </div>
+  <div class="divider"></div>
+
+  <h2>Canales de Soporte Administrativo</h2>
+  <div class="contact-grid">
+    <div class="contact-card primary">
+      <div class="contact-icon">📧</div>
+      <h3>Soporte Técnico</h3>
+      <p class="contact-detail">soporte@parknow.com</p>
+      <p>Para errores técnicos, bugs y problemas de funcionamiento del sistema. Tiempo de respuesta: <strong>4–8 horas hábiles</strong>.</p>
+    </div>
+    <div class="contact-card primary">
+      <div class="contact-icon">🔐</div>
+      <h3>Seguridad</h3>
+      <p class="contact-detail">seguridad@parknow.com</p>
+      <p>Para reportar brechas de seguridad, accesos no autorizados o vulnerabilidades. Atención <strong>24/7 en emergencias</strong>.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">💼</div>
+      <h3>Administración</h3>
+      <p class="contact-detail">admin@parknow.com</p>
+      <p>Para solicitudes de nuevas cuentas administrativas, cambios de rol y accesos especiales. Respuesta en <strong>24 horas hábiles</strong>.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📞</div>
+      <h3>Línea Directa</h3>
+      <p class="contact-detail">601-XXX-XXXX</p>
+      <p>Disponible lunes a viernes <strong>8:00 a.m. – 6:00 p.m.</strong> Para urgencias operativas que afecten el servicio.</p>
+    </div>
+  </div>
+
+  <h2>Información para el Reporte de Incidentes</h2>
+  <div class="support-checklist">
+    <div class="check-item"><span class="check-mark">✓</span><span>Correo electrónico de la cuenta de administrador afectada</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Módulo o pantalla donde ocurre el problema</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Descripción detallada del error y pasos para reproducirlo</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Capturas de pantalla o grabación del error</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Modelo del dispositivo y versión del sistema operativo</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Versión de la aplicación ParkNow instalada</span></div>
+    <div class="check-item"><span class="check-mark">✓</span><span>Hora aproximada en que ocurrió el incidente</span></div>
+  </div>
+
+  <h2>Preguntas Frecuentes del Administrador</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo creo una nueva cuenta de administrador?</div>
+      <div class="faq-a">Ve a <strong>Gestión de Usuarios → Invitar Sesión</strong>, ingresa el correo del nuevo administrador y selecciona el rol correspondiente. El sistema enviará una invitación automática.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Puedo revocar el acceso de un administrador inmediatamente?</div>
+      <div class="faq-a">Sí. Ve a <strong>Gestión de Usuarios</strong>, busca la cuenta y selecciona <strong>"Suspender cuenta"</strong>. El acceso se revoca de inmediato sin necesidad de que el usuario cierre sesión.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Con qué frecuencia debo hacer respaldo de los datos?</div>
+      <div class="faq-a">ParkNow realiza respaldos automáticos diarios. Sin embargo, antes de cambios de configuración importantes, se recomienda solicitar un respaldo manual al equipo técnico.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Cómo veo el historial de acciones de un administrador específico?</div>
+      <div class="faq-a">El log de auditoría está disponible en <strong>Configuración → Auditoría del Sistema</strong>. Puedes filtrar por usuario, fecha y tipo de acción para rastrear actividades específicas.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">¿Qué hago si el sistema está caído?</div>
+      <div class="faq-a">Llama a la línea directa de soporte (<strong>601-XXX-XXXX</strong>) o escribe a <strong>soporte@parknow.com</strong> indicando "URGENTE - Sistema caído" en el asunto. El equipo técnico tiene un SLA de respuesta de <strong>1 hora</strong> para incidentes críticos.</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-top:2rem">
+    <strong>Documento de uso interno:</strong> Este manual es confidencial y de uso exclusivo del personal administrativo autorizado de ParkNow. No distribuir sin autorización del equipo de administración.
+  </div>
+
+  <div class="doc-footer">
+    <span>ParkNow · Manual de Administrador v1.0</span>
+    <span>Sección 16 / 16</span>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (el) el.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showSheet(id, el) {
+  const container = el.closest('.section');
+  container.querySelectorAll('.sheet-panel').forEach(p => p.classList.remove('active'));
+  container.querySelectorAll('.sheet-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
